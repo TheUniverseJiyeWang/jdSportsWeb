@@ -22,11 +22,16 @@ const PkgList: React.FunctionComponent = () => {
             </form>
             {err && <h3>{err}</h3>}
             {loading && <h3>Loading...</h3>}
-            {!err && !loading && data.map((pkgRecord:any)=>
-                <div key={pkgRecord.name}>
-                    {pkgRecord.name}
-                </div>
-            )}
+            <table>
+                {!err && !loading && data.map((pkgRecord:any)=>
+                    <tbody key={pkgRecord.name}>
+                        <tr> 
+                            <th>{pkgRecord.name}</th>
+                            <th>{pkgRecord.version}</th>
+                        </tr>
+                    </tbody>
+                )}
+            </table>
         </div>
     );
 };

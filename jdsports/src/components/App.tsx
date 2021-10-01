@@ -1,7 +1,8 @@
 import { Provider } from 'react-redux';
 import { store } from '../state';
 import PkgList from './PkgList';
-import React from 'react';
+// import React from 'react';
+// import "reflect-metadata";
 
 // class App extends React.Component {
 //   render(){
