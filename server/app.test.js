@@ -12,9 +12,13 @@ describe('/GET user', () => {
         chai.request(app)
         .get('/api/get')
         .end((err, res) => {
+            console.log(res);
+            // const result = res.body.data;
             res.should.have.status(200);
-            // res.body.should.be.a('object');
+            // result.should.be.a('object');
             res.body.should.be.a('array');
+            res.body[0].userId.should.be.a('number');
+            res.body[0].userId.should.be.equal(1);
             done();
         });
     });
